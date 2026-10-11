@@ -1,0 +1,205 @@
+
+/* =========================================
+   NATIVEBREED BIOSHIELD — APP STYLES
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* Welcome page */
+
+.welcome-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 28px;
+  background: #103b54;
+  color: #ffffff;
+}
+
+.welcome-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("/cow-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.welcome-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    120deg,
+    rgba(5, 35, 58, 0.9),
+    rgba(11, 64, 83, 0.72)
+  );
+}
+
+.welcome-card {
+  width: 100%;
+  max-width: 960px;
+  padding: clamp(25px, 5vw, 50px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px);
+  text-align: center;
+}
+
+.welcome-logo {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 36px;
+}
+
+.welcome-card h1 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: clamp(29px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.welcome-card > p {
+  max-width: 670px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.welcome-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.welcome-feature {
+  padding: 19px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.welcome-feature h3 {
+  margin: 0 0 8px;
+  color: #b5f1cf;
+  font-size: 15px;
+}
+
+.welcome-feature p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.welcome-return-button {
+  min-height: 46px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #155a78;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.welcome-return-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive welcome screen */
+
+@media (max-width: 650px) {
+  .welcome-page {
+    padding: 17px;
+  }
+
+  .welcome-card {
+    padding: 25px 18px;
+    border-radius: 19px;
+  }
+
+  .welcome-features {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 22px 0;
+  }
+
+  .welcome-feature {
+    padding: 15px;
+  }
+
+  .welcome-card > p {
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

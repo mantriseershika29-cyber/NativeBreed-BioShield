@@ -1,0 +1,20 @@
+NATIVEBREED BIOSHIELD — SINGLE-LINK DEPLOYMENT
+
+1. Upload this entire project folder to a new GitHub repository.
+2. In Render, choose New + > Blueprint and connect that repository.
+3. Render reads render.yaml and builds the React app, installs Python packages, and starts FastAPI.
+4. When deployment finishes, open the Render URL. The website and /api endpoints share that one URL.
+5. Optional AI chatbot: in Render > Environment, add BIOSHIELD_AI_API_KEY, BIOSHIELD_AI_BASE_URL, BIOSHIELD_AI_MODEL. Without an API key, the chatbot uses clearly-labelled demo responses.
+6. SQLite data on many free hosting plans can reset on redeploy/restart. For data persistence, attach a persistent disk and set DATABASE_PATH to a file path on that disk.
+
+LOCAL TEST
+- Terminal 1: npm ci && npm run build
+- Terminal 2: pip install -r requirements.txt
+- Start: uvicorn main:app --reload
+- Open http://127.0.0.1:8000
+- API docs: http://127.0.0.1:8000/docs
+
+IMPORTANT
+- No live public URL is created by preparing these files. You must connect the repository to a hosting account and authorize deployment.
+- The AI key must be added as a host environment variable; never paste it into frontend code or commit it to GitHub.
+- Translation uses the MyMemory public translation endpoint and therefore requires outbound internet access.
